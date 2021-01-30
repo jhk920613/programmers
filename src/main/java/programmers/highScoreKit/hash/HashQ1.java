@@ -1,9 +1,9 @@
-package programmers.HighScoreKit.Hash;
+package programmers.highScoreKit.hash;
 
 import java.util.*;
 
 // 완주하지 못한 선수
-public class Q1 {
+public class HashQ1 {
 
     public static void main(String[] args) {
         String[] participant = new String[]{"marina", "josipa", "nikola", "vinko", "filipa"};

@@ -1,7 +1,7 @@
-package programmers.HighScoreKit.Hash;
+package programmers.highScoreKit.hash;
 
 // 전화번호 목록
-public class Q2 {
+public class HashQ2 {
 
     public static void main(String[] args) {
 
