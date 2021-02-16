@@ -1,7 +1,5 @@
 package programmers.highScoreKit.sort;
 
-import util.CodeUtil;
-
 import java.util.*;
 
 // 가장 큰 수

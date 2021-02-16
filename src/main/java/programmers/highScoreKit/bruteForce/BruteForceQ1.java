@@ -1,5 +1,5 @@
 package programmers.highScoreKit.bruteForce;
-import reference.GsonUtil;
+import util.GsonUtil;
 
 import java.util.*;
 
@@ -13,7 +13,7 @@ public class BruteForceQ1 {
 
         // [1]
         // [1,2,3]
-        GsonUtil.printToSon(solution(answers));
+        GsonUtil.toJsonPrint(solution(answers));
     }
 
     public static int[] solution(int[] answers) {

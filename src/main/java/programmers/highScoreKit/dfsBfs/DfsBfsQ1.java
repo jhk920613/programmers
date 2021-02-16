@@ -1,6 +1,6 @@
 package programmers.highScoreKit.dfsBfs;
 
-import reference.GsonUtil;
+import util.GsonUtil;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ public class DfsBfsQ1 {
         int target = 3;
 
         //5
-        GsonUtil.printToSon(solution(numbers, target));
+        GsonUtil.toJsonPrint(solution(numbers, target));
     }
 
     public static int solution(int[] numbers, int target) {

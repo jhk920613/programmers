@@ -1,6 +1,6 @@
 package programmers.highScoreKit.bruteForce;
 
-import reference.GsonUtil;
+import util.GsonUtil;
 
 // 카펫
 public class BruteForceQ3 {
@@ -18,7 +18,7 @@ public class BruteForceQ3 {
         // [4,3]
         // [3,3]
         // [8,6]
-        GsonUtil.printToSon(solution(brown, yellow));
+        GsonUtil.toJsonPrint(solution(brown, yellow));
 
     }
 

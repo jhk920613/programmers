@@ -1,4 +1,4 @@
-package reference;
+package util;
 
 import com.google.gson.Gson;
 
@@ -10,7 +10,7 @@ public class GsonUtil {
         return gson.toJson(object);
     }
 
-    public static void printToSon(Object object) {
+    public static void toJsonPrint(Object object) {
 
         System.out.println(gson.toJson(object));
     }
