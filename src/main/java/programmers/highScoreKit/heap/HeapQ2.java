@@ -18,21 +18,11 @@ public class HeapQ2 {
         int answer = 0;
 
         // 대기 우선순위 큐는 작업시간이 짧은 순으로 정렬
-        PriorityQueue<int[]> waitQ = new PriorityQueue<>(new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[1] - o2[1];
-            }
-        });
+        PriorityQueue<int[]> waitQ = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
         waitQ.addAll(Arrays.asList(jobs));
 
         // 작업 우선순위 큐는 요청시간이 빠른 순으로 정렬
-        PriorityQueue<int[]> workQ = new PriorityQueue<>(new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
-            }
-        });
+        PriorityQueue<int[]> workQ = new PriorityQueue<>((o1, o2) -> o1[0] - o2[0]);
 
         // 대기 우선순위에서 뽑았을 때 작업 우선순위 큐에 들어갈 수 없는 job 들이 일시저장될 리스트
         List<int[]> storeList = new ArrayList<>();
@@ -93,7 +83,7 @@ public class HeapQ2 {
         // 작업 가능한 시간일 때만 추가
         // 그 외는 현재 작업할 대상이 아님 (현재 작업 가능한 시간이 아니거나, 작업 가능하지만 작업 큐에 있는 작업들보다 작업시간이 길다는 의미)
         if(!workQ.isEmpty()) {
-            return job[0] <= time && job[1] <= workQ.peek()[1];
+            return job[0] <= time && job[1] == workQ.peek()[1];
         }
         return job[0] <= time;
     }
