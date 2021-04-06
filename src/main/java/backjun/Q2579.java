@@ -11,7 +11,7 @@ public class Q2579 {
         System.out.println(answer);
     }
 
-    private static int tmp_answer = -1;
+    static int tmp_answer = -1;
 
     public static int solution(int N, int number) {
         int answer = 0;
