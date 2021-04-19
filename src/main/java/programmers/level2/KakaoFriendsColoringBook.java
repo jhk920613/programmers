@@ -35,7 +35,7 @@ public class KakaoFriendsColoringBook {
         for (int c = 0; c < m; c++) {
             for (int r = 0; r < n; r++) {
                 if(!visit[c][r]) {
-                    int result = dfs(m, n, c, r, picture[c][r], visit, picture);
+                    int result = move(m, n, c, r, picture[c][r], visit, picture);
 //                    System.out.println();
                     if(picture[c][r] != 0) {
 //                        System.out.println("영역: " + picture[c][r]);
@@ -53,25 +53,25 @@ public class KakaoFriendsColoringBook {
         return answer;
     }
 
-    public int dfs(int m, int n, int c, int r, int value, boolean[][] visit, int[][] picture) {
+    public int move(int m, int n, int c, int r, int value, boolean[][] visit, int[][] picture) {
         int answer = 1;
         visit[c][r] = true;
 //        System.out.println("[" + c + "][" + r +"]");
 
         if(canMove(m, n, c, r, 1, value, visit, picture)) {
-            answer += dfs(m, n, c-1, r, value, visit, picture);
+            answer += move(m, n, c-1, r, value, visit, picture);
         }
 
         if(canMove(m, n, c, r, 2, value, visit, picture)) {
-            answer += dfs(m, n, c+1, r, value, visit, picture);
+            answer += move(m, n, c+1, r, value, visit, picture);
         }
 
         if(canMove(m, n, c, r, 3, value, visit, picture)) {
-            answer += dfs(m, n, c, r-1, value, visit, picture);
+            answer += move(m, n, c, r-1, value, visit, picture);
         }
 
         if(canMove(m, n, c, r, 4, value, visit, picture)) {
-            answer += dfs(m, n, c, r+1, value, visit, picture);
+            answer += move(m, n, c, r+1, value, visit, picture);
         }
 
         return answer;
